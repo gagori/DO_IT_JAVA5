@@ -15,11 +15,17 @@ public class VIPCustomer extends Customer {
 	
 
 	//calcPrice 오버라이딩
-	@Override
+	@Override                          // 표시 없어도 되나? ㅇㅇㅇ
 	public int calcPrice (int price) {
 		bonusPoint += price*bonusRatio ;
 		return price - (int)(price*saleRatio);
+	}
+
+
+	@Override
+	public String showCustomerInfo() {
 		
+		return super.showCustomerInfo() +" 담당상담원의 아이디는 "+agentID+"입니다." ;
 	}
 
 }
